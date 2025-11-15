@@ -37,9 +37,7 @@ cd backend/backend
 ```
 
 **Tài khoản mặc định:**
-- Admin: `admin@example.com` / `Admin@123456`
-- Teacher: `teacher@example.com` / `Teacher@123456`
-- Student: `student@example.com` / `Student@123456`
+- Admin: Email: admin@gmail.com / 123456
 
 ### 3. Mobile App
 ```bash
