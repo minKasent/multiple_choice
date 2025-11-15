@@ -1,0 +1,92 @@
+# Development Environment Configuration Template
+# Copy this file to application-dev.yml and fill in your actual values
+
+spring:
+  # PostgreSQL Configuration
+  datasource:
+    url: jdbc:postgresql://localhost:5432/exam_system_dev
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      connection-timeout: 20000
+      idle-timeout: 300000
+      max-lifetime: 1200000
+  
+  # JPA Configuration
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+    hibernate:
+      ddl-auto: update # Use 'validate' in production
+  
+  # Mail Configuration (for development, use MailHog or similar)
+  mail:
+    host: localhost
+    port: 1025
+    username: 
+    password: 
+    properties:
+      mail:
+        smtp:
+          auth: false
+          starttls:
+            enable: false
+  
+  # OAuth2 Configuration
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: YOUR_GOOGLE_CLIENT_ID_HERE
+            client-secret: YOUR_GOOGLE_CLIENT_SECRET_HERE
+            scope:
+              - email
+              - profile
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/v2/auth
+            token-uri: https://oauth2.googleapis.com/token
+            user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+            user-name-attribute: sub
+
+# Server Configuration
+server:
+  port: 8080
+
+# Logging Configuration
+logging:
+  level:
+    root: INFO
+    com.example.backend: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.web: DEBUG
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+
+# Application Configuration
+app:
+  jwt:
+    secret: dev-secret-key-for-jwt-token-generation-minimum-256-bits-required-for-hs256-algorithm
+    access-token-expiration: 900000 # 15 minutes
+    refresh-token-expiration: 604800000 # 7 days
+  
+  cors:
+    allowed-origins:
+      - http://localhost:3000
+      - http://localhost:5173
+      - http://localhost:4200
+      - http://localhost:8081
+
+# Swagger Configuration
+springdoc:
+  swagger-ui:
+    enabled: true
+

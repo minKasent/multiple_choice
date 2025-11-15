@@ -1,0 +1,56 @@
+# IDE
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+backend/backend/logs/
+
+# Environment files with secrets
+backend/backend/src/main/resources/application-dev.yml
+backend/backend/src/main/resources/application-prod.yml
+*.env
+.env.local
+.env.*.local
+
+# Build files
+target/
+build/
+dist/
+*.class
+*.jar
+*.war
+
+# Flutter
+app/.dart_tool/
+app/.flutter-plugins
+app/.flutter-plugins-dependencies
+app/.packages
+app/.pub-cache/
+app/.pub/
+app/build/
+app/*.g.dart
+app/*.freezed.dart
+app/*.config.dart
+app/*.gr.dart
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
