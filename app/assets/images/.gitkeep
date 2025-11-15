@@ -1,0 +1,7 @@
+# This directory contains image assets
+
+## Required images:
+1. google_logo.png - Google logo for social login button (24x24 or higher resolution)
+   - Download from: https://about.google/brand-resource-center/logos-list/
+   - Use the "G" logo (colored)
+   - Save as: google_logo.png
